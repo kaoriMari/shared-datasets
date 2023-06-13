@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<scheme version="2.0" title="" description="">
+	<nodes>
+		<node id="0" name="CSV File Import" qualified_name="Orange.widgets.data.owcsvimport.OWCSVFileImport" project_name="Orange3" version="" title="CSV File Import" position="(136.0, 147.0)" />
+		<node id="1" name="Data Table" qualified_name="Orange.widgets.data.owtable.OWDataTable" project_name="Orange3" version="" title="Data Table" position="(256.0, 149.0)" />
+		<node id="2" name="Linear Regression" qualified_name="Orange.widgets.model.owlinearregression.OWLinearRegression" project_name="Orange3" version="" title="Linear Regression" position="(621.0, -18.0)" />
+		<node id="3" name="Select Columns" qualified_name="Orange.widgets.data.owselectcolumns.OWSelectAttributes" project_name="Orange3" version="" title="Select Columns" position="(376.0, -19.0)" />
+		<node id="4" name="Data Sampler" qualified_name="Orange.widgets.data.owdatasampler.OWDataSampler" project_name="Orange3" version="" title="Data Sampler" position="(500.0, 148.0)" />
+		<node id="5" name="Predictions" qualified_name="Orange.widgets.evaluate.owpredictions.OWPredictions" project_name="Orange3" version="" title="Predictions" position="(752.0, 143.0)" />
+		<node id="6" name="Predictions" qualified_name="Orange.widgets.evaluate.owpredictions.OWPredictions" project_name="Orange3" version="" title="Predictions (1)" position="(721.0, 276.0)" />
+		<node id="7" name="Scatter Plot" qualified_name="Orange.widgets.visualize.owscatterplot.OWScatterPlot" project_name="Orange3" version="" title="Scatter Plot" position="(253.0, -65.0)" />
+	</nodes>
+	<links>
+		<link id="0" source_node_id="0" sink_node_id="1" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="1" source_node_id="1" sink_node_id="3" source_channel="Selected Data" sink_channel="Data" enabled="true" />
+		<link id="2" source_node_id="3" sink_node_id="4" source_channel="Data" sink_channel="Data" enabled="true" />
+		<link id="3" source_node_id="4" sink_node_id="2" source_channel="Data Sample" sink_channel="Data" enabled="true" />
+		<link id="4" source_node_id="2" sink_node_id="5" source_channel="Model" sink_channel="Predictors" enabled="true" />
+		<link id="5" source_node_id="4" sink_node_id="5" source_channel="Data Sample" sink_channel="Data" enabled="true" />
+		<link id="6" source_node_id="4" sink_node_id="6" source_channel="Remaining Data" sink_channel="Data" enabled="true" />
+		<link id="7" source_node_id="2" sink_node_id="6" source_channel="Model" sink_channel="Predictors" enabled="true" />
+		<link id="8" source_node_id="0" sink_node_id="7" source_channel="Data" sink_channel="Data" enabled="true" />
+	</links>
+	<annotations>
+		<text id="0" type="text/plain" rect="(106.0, 228.0, 98.0, 74.0)" font-family="MS Shell Dlg 2" font-size="16">IMPORT DONNEES</text>
+		<text id="1" type="text/plain" rect="(222.0, 232.0, 89.0, 50.0)" font-family="MS Shell Dlg 2" font-size="16">VISUALIZE</text>
+		<text id="2" type="text/plain" rect="(221.0, 316.0, 95.0, 54.0)" font-family="MS Shell Dlg 2" font-size="16">MANIP
+CLEAN
+N/A ?
+PREPARATION</text>
+		<text id="3" type="text/plain" rect="(338.0, 234.0, 99.0, 54.0)" font-family="MS Shell Dlg 2" font-size="16">X DEF = years
+
+Y DEF = salary</text>
+		<text id="4" type="text/plain" rect="(456.0, 226.0, 124.0, 69.0)" font-family="MS Shell Dlg 2" font-size="16">SPLIT : 
+TRAIN DATASET / TEST DATASET
+
+80/20
+75/25</text>
+		<text id="5" type="text/plain" rect="(517.0, -97.0, 187.0, 27.0)" font-family="MS Shell Dlg 2" font-size="16">ON CONSTRUIT LE MODELE!!!!</text>
+		<text id="6" type="text/plain" rect="(675.0, -95.0, 168.0, 50.0)" font-family="MS Shell Dlg 2" font-size="16">y = a*x + b</text>
+		<text id="7" type="text/plain" rect="(663.0, 339.0, 127.0, 57.0)" font-family="MS Shell Dlg 2" font-size="16">TESTER AVEC DONNEES DE VALIDATION</text>
+		<text id="8" type="text/plain" rect="(316.0, -105.0, 154.0, 50.0)" font-family="MS Shell Dlg 2" font-size="16"> y = target = objetif</text>
+		<text id="9" type="text/plain" rect="(322.0, -131.0, 111.0, 35.0)" font-family="MS Shell Dlg 2" font-size="16">x = features</text>
+	</annotations>
+	<thumbnail />
+	<node_properties>
+		<properties node_id="0" format="literal">{'_session_items': [], '_session_items_v2': [({'type': 'AbsPath', 'path': '//main.glb.corp.local/ep-br$/Home/RIO/Home-RIO-1/J0479761/Documents/shared-datasets/salary-data/Salary_Data.csv'}, {'encoding': 'utf-8', 'delimiter': ',', 'quotechar': '"', 'doublequote': True, 'skipinitialspace': True, 'quoting': 0, 'columntypes': [{'start': 0, 'stop': 2, 'value': 'Auto'}], 'rowspec': [{'start': 0, 'stop': 1, 'value': 'Header'}], 'decimal_separator': '.', 'group_separator': ''})], 'compatibility_mode': False, 'controlAreaVisible': True, 'dialog_state': {'directory': '//main.glb.corp.local/ep-br$/Home/RIO/Home-RIO-1/J0479761/Documents/shared-datasets/salary-data', 'filter': 'Text - comma separated (*.csv, *)'}, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01x\x00\x00\x00\xbf\x00\x00\x02\x8d\x00\x00\x01\xf3\x00\x00\x01x\x00\x00\x00\xbf\x00\x00\x02\x8d\x00\x00\x01\xf3\x00\x00\x00\x00\x00\x00\x00\x00\x05V\x00\x00\x01x\x00\x00\x00\xbf\x00\x00\x02\x8d\x00\x00\x01\xf3', '__version__': 3}</properties>
+		<properties node_id="1" format="literal">{'auto_commit': True, 'color_by_class': True, 'controlAreaVisible': True, 'dist_color_RGB': (220, 220, 220, 255), 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x00\x04\x00\x00\x001\x00\x00\x04\xff\x00\x00\x02\xc8\x00\x00\x00\x04\x00\x00\x001\x00\x00\x04\xff\x00\x00\x02\xc8\x00\x00\x00\x00\x00\x00\x00\x00\x05V\x00\x00\x00\x04\x00\x00\x001\x00\x00\x04\xff\x00\x00\x02\xc8', 'select_rows': True, 'selected_cols': [], 'selected_rows': [], 'show_attribute_labels': True, 'show_distributions': True, '__version__': 2}</properties>
+		<properties node_id="2" format="literal">{'alpha_index': 0, 'auto_apply': True, 'autosend': True, 'controlAreaVisible': True, 'fit_intercept': True, 'l2_ratio': 0.5, 'learner_name': '', 'reg_type': 0, 'ridge': False, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x02\x07\x00\x00\x00\xa1\x00\x00\x03O\x00\x00\x02\x18\x00\x00\x02\x08\x00\x00\x00\xc0\x00\x00\x03N\x00\x00\x02\x17\x00\x00\x00\x00\x00\x00\x00\x00\x05V\x00\x00\x02\x08\x00\x00\x00\xc0\x00\x00\x03N\x00\x00\x02\x17', '__version__': 1}</properties>
+		<properties node_id="3" format="pickle">gASVlgEAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNpZ25v
+cmVfbmV3X2ZlYXR1cmVzlImME3NhdmVkV2lkZ2V0R2VvbWV0cnmUQ0IB2dDLAAMAAAAAACMAAABE
+AAACegAAApsAAAAjAAAARAAAAnoAAAKbAAAAAAAAAAAFVgAAACMAAABEAAACegAAApuUjBJ1c2Vf
+aW5wdXRfZmVhdHVyZXOUiYwLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZSMFW9y
+YW5nZXdpZGdldC5zZXR0aW5nc5SMB0NvbnRleHSUk5QpgZR9lCiMBnZhbHVlc5R9lCiMEWRvbWFp
+bl9yb2xlX2hpbnRzlH2UKIwPWWVhcnNFeHBlcmllbmNllEsChpSMCWF0dHJpYnV0ZZRLAIaUjAZT
+YWxhcnmUSwKGlIwFY2xhc3OUSwCGlHVK/v///4aUaAdLAXWMCmF0dHJpYnV0ZXOUfZQoaBNLAmgX
+SwJ1jAVtZXRhc5R9lHViYXUu
+</properties>
+		<properties node_id="4" format="literal">{'compatibility_mode': False, 'controlAreaVisible': True, 'number_of_folds': 10, 'replacement': False, 'sampleSizeNumber': 1, 'sampleSizePercentage': 80, 'sampleSizeSqlPercentage': 0.1, 'sampleSizeSqlTime': 1, 'sampling_type': 0, 'savedWidgetGeometry': b'\x01\xd9\xd0\xcb\x00\x03\x00\x00\x00\x00\x01\x89\x00\x00\x00i\x00\x00\x02Z\x00\x00\x02\x04\x00\x00\x01\x8a\x00\x00\x00\x88\x00\x00\x02Y\x00\x00\x02\x03\x00\x00\x00\x00\x00\x00\x00\x00\x05V\x00\x00\x01\x8a\x00\x00\x00\x88\x00\x00\x02Y\x00\x00\x02\x03', 'selectedFold': 1, 'sql_dl': False, 'stratify': False, 'use_seed': True, '__version__': 2}</properties>
+		<properties node_id="5" format="pickle">gASVCgEAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21ldHJ5
+lENCAdnQywADAAAAAAAGAAAACAAAAhcAAALPAAAABwAAACcAAAIWAAACzgAAAAAAAAAABVYAAAAH
+AAAAJwAAAhYAAALOlIwJc2VsZWN0aW9ulF2UjAtzY29yZV90YWJsZZR9lIwMc2hvd25fc2NvcmVz
+lI+UKIwEUk1TRZSMA01BRZSMA01TRZSMAlIylIwDQVVDlIwCQ0GUjAJGMZSMBlJlY2FsbJSMCVBy
+ZWNpc2lvbpSQc4wLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZR1Lg==
+</properties>
+		<properties node_id="6" format="pickle">gASVCgEAAAAAAAB9lCiMEmNvbnRyb2xBcmVhVmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21ldHJ5
+lENCAdnQywADAAAAAAH7AAAACgAAA+IAAAK/AAAB/AAAACkAAAPhAAACvgAAAAAAAAAABVYAAAH8
+AAAAKQAAA+EAAAK+lIwJc2VsZWN0aW9ulF2UjAtzY29yZV90YWJsZZR9lIwMc2hvd25fc2NvcmVz
+lI+UKIwEUk1TRZSMA01BRZSMA01TRZSMAlIylIwDQVVDlIwCQ0GUjAJGMZSMBlJlY2FsbJSMCVBy
+ZWNpc2lvbpSQc4wLX192ZXJzaW9uX1+USwGMEGNvbnRleHRfc2V0dGluZ3OUXZR1Lg==
+</properties>
+		<properties node_id="7" format="pickle">gASVnAIAAAAAAAB9lCiMC2F1dG9fY29tbWl0lIiMC2F1dG9fc2FtcGxllIiMEmNvbnRyb2xBcmVh
+VmlzaWJsZZSIjBNzYXZlZFdpZGdldEdlb21ldHJ5lENCAdnQywADAAAAAADMAAAAHAAABFUAAAKF
+AAAAzQAAADsAAARUAAAChAAAAAAAAAAABVYAAADNAAAAOwAABFQAAAKElIwJc2VsZWN0aW9ulE6M
+EXRvb2x0aXBfc2hvd3NfYWxslIiMD3Zpc3VhbF9zZXR0aW5nc5R9lIwFZ3JhcGiUfZQojAthbHBo
+YV92YWx1ZZRLgIwNY2xhc3NfZGVuc2l0eZSJjBFqaXR0ZXJfY29udGludW91c5SJjAtqaXR0ZXJf
+c2l6ZZRLCowTbGFiZWxfb25seV9zZWxlY3RlZJSJjBZvcnRob25vcm1hbF9yZWdyZXNzaW9ulImM
+C3BvaW50X3dpZHRolEsMjAlzaG93X2dyaWSUiYwLc2hvd19sZWdlbmSUiIwNc2hvd19yZWdfbGlu
+ZZSJdYwLX192ZXJzaW9uX1+USwWMEGNvbnRleHRfc2V0dGluZ3OUXZSMFW9yYW5nZXdpZGdldC5z
+ZXR0aW5nc5SMB0NvbnRleHSUk5QpgZR9lCiMBnZhbHVlc5R9lCiMCmF0dHJfY29sb3KUTkr+////
+hpSMCmF0dHJfbGFiZWyUTkr+////hpSMCmF0dHJfc2hhcGWUTkr+////hpSMCWF0dHJfc2l6ZZRO
+Sv7///+GlIwGYXR0cl94lIwPWWVhcnNFeHBlcmllbmNllEtmhpSMBmF0dHJfeZSMBlNhbGFyeZRL
+ZoaUaAp9lGgWSwV1jAphdHRyaWJ1dGVzlH2UKGgpSwJoLEsCdYwFbWV0YXOUfZR1YmF1Lg==
+</properties>
+	</node_properties>
+	<session_state>
+		<window_groups />
+	</session_state>
+</scheme>
